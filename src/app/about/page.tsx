@@ -1,9 +1,5 @@
-
-"use client";
-
 import type { Metadata } from "next";
-import { useContext } from "react";
-import { AuthContext } from "@/app/auth-provider";
+import User from "@/component/User";
 
 export const metadata: Metadata = {
   title: 'About Page',
@@ -11,11 +7,10 @@ export const metadata: Metadata = {
 }
 
 export default function About() {
-  const { user } = useContext(AuthContext);
   return (
     <main className="flex flex-col items-center justify-between p-4">
       <h1 className='text-xl mb-16'>About Page</h1>
-      {user && <h2 className="text-xl mb-16">{`Welcome back ${user?.firstName}:)`}</h2>}
+      <User />
     </main>
   )
 }
